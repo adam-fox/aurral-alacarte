@@ -1,0 +1,38 @@
+{
+  "id": "alacarte",
+  "name": "alacarte",
+  "version": "0.1.0",
+  "api": 1,
+  "description": "Downloads albums from Apple Music through alacarte. alacarte files each album in its own music folder, and Aurral plays it from there.",
+  "repository": "https://github.com/adam-fox/aurral-alacarte",
+  "uses": ["Your alacarte server", "Apple Music, through alacarte"],
+  "settings": [
+    {
+      "key": "url",
+      "label": "alacarte URL",
+      "type": "text",
+      "required": true,
+      "help": "Like http://alacarte-web:7373 when both containers share a Docker network."
+    },
+    {
+      "key": "token",
+      "label": "Integration token",
+      "type": "password",
+      "required": true,
+      "help": "In alacarte, under Settings > Integrations. Turn the integration on there first."
+    },
+    {
+      "key": "parallel",
+      "label": "Tracks requested at once",
+      "type": "number",
+      "help": "How many tracks the plugin asks alacarte for at a time, across all albums. alacarte downloads one at a time either way. Default 3."
+    }
+  ],
+  "test": true,
+  "actions": [],
+  "events": [],
+  "downloadSource": { "tracks": false, "albums": true },
+  "importList": null,
+  "schedule": null,
+  "apiAccess": false
+}
